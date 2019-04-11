@@ -1,0 +1,22 @@
+.Home{
+    padding: 5rem;
+    height: 94vh;
+    background: url('../../images/stars.svg'), #1B1B25;
+}
+
+.Home__Banner{
+    padding: 0px 400px 0px 400px;
+}
+
+.Home__Banner-img{
+    width: 100%;
+}
+
+.Home__Text-area{
+    margin-top: 40px;
+}
+
+.Home__Text-area h1{
+    font-weight: bold;
+    font-size: 60px;
+}
