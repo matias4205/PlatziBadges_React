@@ -7,7 +7,7 @@ import "./styles/Badge.css"
 
 class Badge extends React.Component{
     render(){
-        const {firstName, lastName, jobTitle, twitter, email, avatarUrl} = this.props;
+        const {firstName, lastName, jobTitle, twitter, email} = this.props;
         const mailHash = md5(email);
 
         return (
