@@ -1,14 +1,13 @@
 import React from 'react';
-import md5 from 'md5';
 
 import confLogo from '../images/badge-header.svg'
 
 import "./styles/Badge.css"
+import Gravatar from './Gravatar';
 
 class Badge extends React.Component{
     render(){
         const {firstName, lastName, jobTitle, twitter, email} = this.props;
-        const mailHash = md5(email);
 
         return (
         <div className="Badge">
@@ -16,7 +15,7 @@ class Badge extends React.Component{
                 <img src={confLogo} alt="Logo platzi conf"/>
             </div>
             <div className="Badge__section-name">
-                <img className="Badge__avatar" src={`https://www.gravatar.com/avatar/${mailHash}?s=120`} alt="Avatar"/>
+                <Gravatar className="Badge__avatar" email={email} />
                 <h1>{firstName} <br/> {lastName}</h1>
             </div>
             <div className="Badge__section-info">

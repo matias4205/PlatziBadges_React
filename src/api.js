@@ -22,10 +22,10 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      throw new Error('Server: 500');
-      // return callApi('/badges');
+      return callApi('/badges');
     },
     create(badge) {
+      // throw new Error('Server Error');
       return callApi(`/badges`, {
         method: 'POST',
         body: JSON.stringify(badge),

@@ -3,20 +3,8 @@ import React from 'react';
 class BadgeForm extends React.Component{
     state = this.props.formValues
 
-    // handleChange = ({target}) => {
-    //     this.setState({
-    //         [target.name]: target.value
-    //     })
-    // }
-
     handleClick = e => {
         console.log("Button was pressed");
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
-        console.log("Form was submitted");
-        console.log(this.state);
     }
 
     render(){
@@ -24,7 +12,7 @@ class BadgeForm extends React.Component{
             <div>
                 <h1>New Attendant</h1>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.props.onSubmit}>
                     <div className="form-group">
                         <label>First Name</label>
                         <input onChange={this.props.onChange} className="form-control" type="text" name="firstName" value={this.props.formValues.firstName} />
@@ -52,6 +40,10 @@ class BadgeForm extends React.Component{
 
                     <button onClick={this.handleClick} className="btn btn-primary">Save</button>
                 </form>
+
+                { this.props.error && (
+                    <p className="text-danger" >{this.props.error.message}</p>
+                )}
 
             </div>
         );
