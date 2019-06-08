@@ -1,13 +1,12 @@
 {
   "badges": [
     {
-      "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Freda",
-      "lastName": "Grady",
+      "firstName": "Freday",
+      "lastName": "Piñoñ",
       "email": "Leann_Berge@gmail.com",
       "jobTitle": "Legacy Brand Director",
       "twitter": "FredaGrady22221-7573",
-      "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
+      "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7"
     },
     {
       "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
@@ -448,6 +447,30 @@
       "jobTitle": "Developer",
       "twitter": "matias4205",
       "id": "mUIcpc2"
+    },
+    {
+      "firstName": "Freda",
+      "lastName": "Grady",
+      "email": "Leann_Berge@gmail.com",
+      "jobTitle": "Legacy Brand Director",
+      "twitter": "FredaGrady22221-7573",
+      "id": "nbyhyCP"
+    },
+    {
+      "firstName": "Richi",
+      "lastName": "Grady",
+      "email": "Leann_Berge@gmail.com",
+      "jobTitle": "Legacy Brand Director",
+      "twitter": "FredaGrady22221-7573",
+      "id": "puvNbXR"
+    },
+    {
+      "firstName": "Soraya",
+      "lastName": "Munoz",
+      "email": "matiasperezpc2@gmail.com",
+      "jobTitle": "Diseñador",
+      "twitter": "matias4205",
+      "id": "SHs8gxF"
     }
   ]
 }
