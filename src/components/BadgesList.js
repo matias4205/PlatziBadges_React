@@ -25,21 +25,50 @@ function BadgeListItem(props){
     );
 }
 
-class BadgesList extends React.Component{
+function useSearchBadges(badges){
+    const [ query, setQuery ] = React.useState(''); 
+    const [ filteredBadges, setFilteredBadges ] = React.useState(badges);
 
-    render(){
-        if(this.props.badges.length === 0){
-            return (
+    React.useMemo(() => {
+        const results = badges.filter((badge) => {
+            return `${badge.firstName} ${badge.lastName}`.toLowerCase().includes(query.toLowerCase());
+        });
+        
+        setFilteredBadges(results);
+    }, [badges, query]);
+
+    return {filteredBadges, setQuery, query};
+}
+
+function BadgesList(props){
+    const badges = props.badges;
+
+    const {filteredBadges, setQuery, query} = useSearchBadges(badges);
+
+
+    if(filteredBadges.length === 0){
+        return (
+            <React.Fragment>
+                <div className="form-group">
+                    <label>Filter Badges</label>
+                    <input type="text" className="form-control" value={query} onChange={(e)=>{ setQuery(e.target.value) }}/>
+                </div>
                 <div>
                     <h3>No badges where found</h3>
                     <Link className="btn btn-primary" to="/badges/new"> Create new badge </Link>
                 </div>
-            )
-        }
+            </React.Fragment>
+        )
+    }
 
-        return (
+    return (
+        <React.Fragment>
+            <div className="form-group">
+                <label>Filter Badges</label>
+                <input type="text" className="form-control" value={query} onChange={(e)=>{ setQuery(e.target.value) }}/>
+            </div>
             <ul className="list-unstyled">
-                {this.props.badges.map((badge)=>{
+                {filteredBadges.map((badge)=>{
                     return (
                         <li key={badge.id}>
                             <Link className="text-reset text-decoration-none" to={ `/badges/${ badge.id }` }>
@@ -49,9 +78,7 @@ class BadgesList extends React.Component{
                     );
                 })}
             </ul>
-        );
-    }
-
+        </React.Fragment>
+    );
 }
-
 export default BadgesList;

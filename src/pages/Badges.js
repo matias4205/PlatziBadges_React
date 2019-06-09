@@ -23,7 +23,7 @@ class Badges extends React.Component{
         error: null,
         data: undefined
     }
-
+    
     fetchData = async() => {
         this.setState({
             loading: true,

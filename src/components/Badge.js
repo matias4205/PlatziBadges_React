@@ -5,11 +5,10 @@ import confLogo from '../images/badge-header.svg'
 import "./styles/Badge.css"
 import Gravatar from './Gravatar';
 
-class Badge extends React.Component{
-    render(){
-        const {firstName, lastName, jobTitle, twitter, email} = this.props;
-
-        return (
+function Badge(props){
+    const {firstName, lastName, jobTitle, twitter, email} = props;
+    
+    return (
         <div className="Badge">
             <div className="Badge__header">
                 <img src={confLogo} alt="Logo platzi conf"/>
@@ -26,8 +25,7 @@ class Badge extends React.Component{
                 #platziconf
             </div>
         </div>
-        );
-    }
+    )
 }
 
 export default Badge;
